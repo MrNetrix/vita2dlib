@@ -1,0 +1,9 @@
+﻿float4 main(
+	float2 vTexcoord : TEXCOORD0,
+	uniform sampler2D tex,
+    uniform sampler2D palette)
+{
+    float index = tex2D(tex, vTexcoord).a;
+    
+    return tex2D(palette, float2(index, 0.0));
+}
